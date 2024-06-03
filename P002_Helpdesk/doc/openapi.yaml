@@ -1,0 +1,226 @@
+openapi: 3.0.3
+info:
+  title: Helpdesk API - OpenAPI 3.0
+  description: | 
+    Documentazione dell'API del sistema di helpdesk 
+    per la gestione delle segnalazioni e delle notifiche.
+  version: "0.1"  
+servers: 
+- url: "http://localhost:3000"
+  description: descrizione
+paths:
+  /alert:
+    get:
+      summary: Restituisce tutti gli alert impostati
+      responses:
+        '200': #status code
+          description: Successo
+          content: 
+            application/json:
+              schema:
+                type: array
+                items: 
+                  type: string    
+  /dispositivo:
+    get:
+      summary: Restituisce tutti i dispositivi
+      responses:
+        200:
+          description: Successo
+          content: 
+            application/json:
+              schema:
+                type: array
+                items: 
+                  type: string   
+    post:
+      summary: Crea un nuovo dispositivo
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              nome:
+                type: string
+              id_stanza:
+                type: integer
+      responses:
+        201:
+          description: Creato
+    delete:
+      summary: Elimina un dispositivo
+      parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+      responses:
+            200:
+              description: Successo
+
+  /notifica:
+    get:
+      summary: Restituisce tutte le notifiche
+      responses:
+        200:
+          description: Successo
+    post:
+      summary: Crea una nuova notifica
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              id_stanza:
+                type: integer
+              id_dispositivo:
+                type: integer
+              id_segnalazione:
+                type: integer
+      responses:
+        201:
+          description: Creato
+  /segnalazione:
+    get:
+      summary: Restituisce tutte le segnalazioni
+      responses:
+        200:
+          description: Successo
+    post:
+      summary: Crea una nuova segnalazione
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              id_utente:
+                type: integer
+              id_stanza:
+                type: integer
+              id_dispositivo:
+                type: integer
+              data:
+                type: string
+                format: date-time
+              tipo:
+                type: string
+                enum:
+                  - pulizia
+                  - guasto_tecnico
+                  - guasto_aula
+              stato:
+                type: string
+                enum:
+                  - eseguita
+                  - in_attesa
+                  - fallita
+              descrizione:
+                type: string
+      responses:
+        201:
+          description: Creato
+  /stanza:
+    get:
+      summary: Restituisce tutte le stanze
+      responses:
+        200:
+          description: Successo
+    post:
+      summary: Crea una nuova stanza
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              nome:
+                type: string
+              numero:
+                type: integer
+              piano:
+                type: string
+                enum:
+                  - terra
+                  - primo
+                  - secondo
+              tipo:
+                type: string
+                enum:
+                  - aula
+                  - laboratorio
+                  - bagno
+                  - spogliatoio
+                  - palestra
+                  - ufficio
+      responses:
+        201:
+          description: Creato
+    delete:
+        summary: Elimina una stanza
+        parameters:
+           - name: id
+             in: path
+             required: true
+             schema:
+                type: integer
+        responses:
+            200:
+              description: Successo
+  /utente:
+    get:
+      summary: Restituisce tutti gli utenti
+      responses:
+        200:
+          description: Successo
+    post:
+      summary: Crea un nuovo utente
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              nome:
+                type: string
+              cognome:
+                type: string
+              email:
+                type: string
+              ruolo:
+                type: string
+                enum:
+                  - utente
+                  - tecnico
+                  - personaleATA
+                  - amministratore
+              piano:
+                type: string
+                enum:
+                  - terra
+                  - primo
+                  - secondo
+              sospensione:
+                type: string
+                enum:
+                  - true
+                  - false
+              ban:
+                type: string
+                enum:
+                  - true
+                  - false
+              fine_sospensione:
+                type: string
+                format: date
+      responses:
+        201:
+          description: Creato

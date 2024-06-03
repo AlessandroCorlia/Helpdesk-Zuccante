@@ -1,0 +1,261 @@
+/*home*/
+header{
+    padding : 0;
+}
+body{
+    background-color: #dad5ed;
+}
+.navbar-brand {
+    font-weight: bold;
+    color: white;
+}
+footer {
+    background-color: mediumslateblue;
+}
+.navbar {
+    background-color: mediumslateblue;
+    padding: 10px 0;
+}
+.nav{
+    padding: 10px 0;
+}
+.title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    color: #333;
+}
+
+footer p{
+     text-align: center;
+     color: black;
+ }
+p {
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+    font-size: 18px;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    filter: brightness(50%); /* Opacità del 50% */
+    transition: all 0.3s ease; /* Transizione per effetto hover */
+}
+
+.hero-image:hover img {
+    filter: brightness(30%);
+}
+
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    max-width: 80%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: mediumslateblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+#google{
+    filter: brightness(100%);
+}
+.hero-content a:hover {
+    background-color: #5134da;
+}
+.menu-item {
+    margin-right: 20px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.menu-item:hover {
+    color: mediumslateblue ;
+    text-decoration: none;
+}
+.login-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+#logo{
+    color: white;
+}
+
+.login-button:hover {
+    color: lightblue;
+}
+.container {
+    align-items: center;
+}
+#logoZ {
+    display: block;
+    width: 50px;
+    height: auto;
+}
+#dispositivi-container {
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#dispositivi-container article{
+    width: 300px;
+    margin : 30px;
+    background-color: white;
+    transition: ease-in-out 0.3s;
+    box-shadow: black 0px 0px 10px;
+}
+#dispositivi-container article:hover{
+    transform: translate(0, -10px);
+    background-color: lightgoldenrodyellow;
+}
+#stanze-container {
+    display : flex;
+    flex-direction: row;
+    flex-wrap : wrap;
+}
+#stanze-container article{
+    width: 300px;
+    margin : 30px;
+    background-color: white;
+    transition: ease-in-out 0.3s;
+    box-shadow: black 0px 0px 10px;
+}
+#stanze-container article:hover{
+    transform: translate(0, -10px);
+    background-color: lightgoldenrodyellow;
+}
+.stanza-button{
+    background-color: mediumslateblue;
+}
+.dispositivi-button{
+    background-color: mediumslateblue;
+}
+.dispositivo-button{
+    background-color: mediumslateblue;
+}
+#dispositivi-container article{
+    width: 300px;
+    margin : 30px;
+    transition: ease-in-out 0.3s;
+}
+#dispositivi-container article:hover{
+    transform: translate(0, -10px);
+}
+#segnalazioni-container{
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#segnalazioni-container article{
+    background-color: white;
+    width: 300px;
+    margin : 30px;
+    transition: ease-in-out 0.3s;
+    box-shadow: black 0px 0px 10px;
+}
+#segnalazioni-container article:hover{
+    transform: translate(0, -10px);
+    background-color: lightgoldenrodyellow;
+}
+#symbol{
+    font-size: 35px;
+}
+
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#progressIndicator{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#searchInput{
+    width: 100%;
+}
+.field{
+    margin-right: 10px;
+    margin-top: auto;
+}
+body{
+    background-color: #dad5ed;
+}
+#accountIcon{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#accountIcon a {
+    display: block;
+    height: 100%;
+}
+.drawer {
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+.drawer.open {
+    right: 0;
+}
+.drawer header {
+    background-color: blueviolet;
+    padding: 10px;
+}
+.drawer nav img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.drawer nav h6 {
+    margin-left: 10px;
+}
+.drawer a {
+    display: block;
+    padding: 10px;
+    color: #333333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.drawer a:hover {
+    background-color: #f5f5f5;
+}
+
+h6{
+    font-size: 18px;
+}
+.history-button{
+    background-color: mediumslateblue;
+}
